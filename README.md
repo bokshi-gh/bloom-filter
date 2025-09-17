@@ -1,6 +1,7 @@
 # Bloom Filter
 
 This repository contains a Python implementation of [Bloom Filter](https://en.wikipedia.org/wiki/Bloom_filter), a space-efficient probabilistic data structure.
+> A **Bloom Filter** is a **bit array of size `m`** with **`k` independent hash functions**. 
 > A Bloom filter is a space-efficient probabilistic data structure used to test if an element is a member of a set, allowing for very fast membership queries with a high degree of accuracy but with the possibility of false positives (stating an element is present when it's not)
 
 ## Features
