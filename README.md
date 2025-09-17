@@ -4,6 +4,10 @@ This repository contains a Python implementation of [Bloom Filter](https://en.wi
 
 > A **Bloom Filter** is a **bit array of size `m`** with **`k` independent hash functions**.
 
+> **False positives are possible:** Bloom filter may report an element is present when it is not.  
+>
+> **False negatives are impossible:** Elements that are added will always be reported as present.  
+
 > It is a space-efficient probabilistic data structure used to test if an element is a member of a set, allowing for very fast membership queries with a high degree of accuracy but with the possibility of false positives (stating an element is present when it's not)
 
 ## Features
