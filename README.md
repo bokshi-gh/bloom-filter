@@ -1,3 +1,3 @@
 # Bloom Filter
 
-Bloom Filter: The data structure built for speed search | by ...A Bloom filter is a space-efficient probabilistic data structure used to test whether an element is a member of a set
+A Bloom filter is a space-efficient probabilistic data structure used to test whether an element is a member of a set.
