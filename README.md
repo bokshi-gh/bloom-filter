@@ -11,4 +11,4 @@ This repository contains a Python implementation of [Bloom Filter](https://en.wi
 
 ## Usage
 
-Example usage are provided in the main.py file.
+Example usage is provided in **`main.py`**. Simply check/run `main.py` to see how to create a Bloom filter, add elements, and check membership.
