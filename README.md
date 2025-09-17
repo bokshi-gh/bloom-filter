@@ -18,7 +18,6 @@ Example usage is provided in **`main.py`**. Simply check/run `main.py` to see ho
 
 ## References
 
-- [Python hashlib documentation](https://docs.python.org/3/library/hashlib.html)
 - [Bloom Filter - Wikipedia](https://en.wikipedia.org/wiki/Bloom_filter)  
-- [False positive and False negative - Wikipedia](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)
+- [False Positives and False Negatives - Wikipedia](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)
 - [Python hashlib documentation](https://docs.python.org/3/library/hashlib.html)
