@@ -9,9 +9,6 @@ class BloomFilter:
         self.hash_algorithms = hashlib.algorithms_available
         self.hash_functions = []
 
-        if k > len(self.hash_algorithms):
-            raise ValueError("k is larger than available hash algorithms")
-
         for algorithm in self.hash_algorithms:
             try:
                 if 'shake' in algorithm:
@@ -22,6 +19,9 @@ class BloomFilter:
             except (ValueError, TypeError):
                 # Skip unsupported algorithms
                 continue
+
+        if k > len(self.hash_functions):
+            raise ValueError("k is larger than available hash functions")
 
     def add(self, item):
         for i in range(self.k):
