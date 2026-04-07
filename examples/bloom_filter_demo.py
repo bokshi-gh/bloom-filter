@@ -1,3 +1,5 @@
+from bloom_filter import BloomFilter
+
 n = 1000
 epsilon = 0.01
 m = BloomFilter.required_m(n, epsilon)
