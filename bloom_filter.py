@@ -2,6 +2,11 @@ import hashlib
 
 class BloomFilter:
     def __init__(self, m, k) -> None:
+        if m <= 0:
+            raise ValueError("m must be positive")
+        if k <= 0:
+            raise ValueError("k must be positive")
+            
         self.m = m
         self.k = k
         self.bit_array = [0] * m
