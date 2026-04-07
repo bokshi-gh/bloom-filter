@@ -52,6 +52,24 @@ class BloomFilter:
     # -------------------------------
 
     @staticmethod
+    def false_positive_probability(m, n, k):
+        """Compute approximate false positive probability"""
+        if m <= 0 or n <= 0 or k <= 0:
+            return 1.0
+        return (1 - math.exp(-k * n / m)) ** k
+
+    @staticmethod
+    def goel_gupta_bound(m, n, k):
+        """Rigorous upper bound for false positive probability (finite filter)"""
+        if m <= 1 or n < 0 or k <= 0:
+            return 1.0
+        return (1 - math.exp(-k * (n + 0.5) / (m - 1))) ** k
+
+    def current_false_positive(self):
+        """Compute approximate false positive probability with current parameters and elements inserted"""
+        return self.false_positive_probability(self.m, self.n_elements, self.k)
+
+    @staticmethod
     def optimal_k(m, n):
         """Compute the optimal number of hash functions for given m and n"""
         if n == 0:
@@ -64,21 +82,3 @@ class BloomFilter:
         if epsilon <= 0 or epsilon >= 1:
             raise ValueError("epsilon must be between 0 and 1")
         return math.ceil(- (n * math.log(epsilon)) / (math.log(2) ** 2))
-
-    @staticmethod
-    def false_positive_probability(m, n, k):
-        """Compute approximate false positive probability"""
-        if m <= 0 or n <= 0 or k <= 0:
-            return 1.0
-        return (1 - math.exp(-k * n / m)) ** k
-
-    def current_false_positive(self):
-        """Compute approximate false positive probability with current parameters and elements inserted"""
-        return self.false_positive_probability(self.m, self.n_elements, self.k)
-
-    @staticmethod
-    def goel_gupta_bound(m, n, k):
-        """Rigorous upper bound for false positive probability (finite filter)"""
-        if m <= 1 or n < 0 or k <= 0:
-            return 1.0
-        return (1 - math.exp(-k * (n + 0.5) / (m - 1))) ** k
